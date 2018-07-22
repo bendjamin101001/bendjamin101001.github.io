@@ -159,31 +159,30 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-test"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-斑斑拍脆 001  PyTricks Digest"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/02/22/test/">Test</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-meta">
       
-	Posted on <a href="/2018/02/22/test/" class="article-date">
-	  <time datetime="2018-02-22T08:36:51.000Z" itemprop="datePublished">February 22, 2018</time>
+	Posted on <a href="/2018/07/21/斑斑拍脆 001  PyTricks Digest/" class="article-date">
+	  <time datetime="2018-07-21T03:56:24.941Z" itemprop="datePublished">July 21, 2018</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>斑斑拍脆 001 | PyTricks Digest</p>
+<p>最近訂閱了<a href="https://realpython.com" target="_blank" rel="noopener">這個電子報</a>，每天可以間隔地收到關於 python 的小技巧或學習心態的短信。有些趣味性質較多，有些則是十分實用啊～像是那種搞了整個下午寫了一推冗余的迴圈才發現 stackoverflow 上的大神只要一行就可以解決的小技巧，所以決定把可能會用到的整理成中文的版本，之後自己想查也方便～</p>
+<p>第一則是讓人回想起第一次寫程式的時光的小技巧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 宣告了兩個變數</span></span><br><span class="line">a = <span class="number">37</span></span><br><span class="line">b = <span class="number">41</span></span><br><span class="line"><span class="comment"># 互換值的話通常要準備第三個變數來暫存</span></span><br><span class="line">tmp = a</span><br><span class="line">a = b</span><br><span class="line">b = tmp</span><br><span class="line"><span class="comment"># 但是在 python 中可以直接這樣寫</span></span><br><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+<p>第二則需要知道一小段程式碼執行時間的情況會很實用，想起上學期修了一堂動態系統生物學，最後一次作業需要比較使用 Gillespie 跟 Langevin 方程式模擬噪音的差別，這種時候就很適合用類似的功能來計數執行的時間：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> timeit</span><br><span class="line"><span class="comment"># 用 timeit 來看看把 0 到 99 的數字轉成字串之後用 “-” 串起來執行一萬次需要多少時間</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>timeit.timeit(<span class="string">'"-".join(str(n) for n in range(100))'</span>,number=<span class="number">10000</span>)</span><br><span class="line"><span class="comment"># 在我的 i5 CPU 上執行起來是 0.33899720900080865，每次都略略不同</span></span><br></pre></td></tr></table></figure>
+<p>第三則在合併字典的時候會用到，字典是很方便的原生的資料結構，將兩個字典合成一本字典原來要用到雙星號這個神奇的東西：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = &#123;<span class="string">'b'</span>: <span class="number">3</span>, <span class="string">'c'</span>: <span class="number">4</span>&#125;</span><br><span class="line"><span class="comment"># 使用 ** 雙星號這個 dictionary unpacking operators 來合併兩個字典</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = &#123;**x, **y&#125;</span><br><span class="line"><span class="comment"># 需要注意的是如果有重複的 key 的話，右側的會覆蓋左側的喔</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z</span><br><span class="line">&#123;<span class="string">'c'</span>: <span class="number">4</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>以上就是最近學到的幾個小技巧，希望之後還有動力繼續紀錄～</p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -316,8 +315,8 @@ var themeMenus = {};
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2018/02/22/test/">Test</a></h6>
-              <span>February 22, 2018</span>
+              <h6 style="margin: 0;"><a href="/2018/07/21/斑斑拍脆 001  PyTricks Digest/">(no title)</a></h6>
+              <span>July 21, 2018</span>
             </div>
 
           </li>
@@ -359,7 +358,7 @@ var themeMenus = {};
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
